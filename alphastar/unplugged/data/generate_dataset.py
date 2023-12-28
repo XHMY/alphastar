@@ -44,6 +44,7 @@ from pysc2.lib import sc_process
 from pysc2.lib.replay import replay_converter
 import tensorflow as tf
 import websocket
+from tqdm import tqdm
 
 from google.protobuf import text_format
 
@@ -170,7 +171,7 @@ def main(argv):
   with tf.io.gfile.GFile(FLAGS.partition_file, 'r') as f:
     replay_hashes = [l.strip() for l in f.readlines()]
 
-  for h in replay_hashes:
+  for h in tqdm(replay_hashes):
     logging.info('Processing replay with hash %s.', h)
     for episode_hash, serialized_episode in _process(
         replay_file_path=os.path.join(FLAGS.sc2_replay_path, f'{h}.SC2Replay'),

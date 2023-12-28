@@ -1,10 +1,13 @@
 apache-beam
-dm-acme[jax,tf]>=0.2.4
+dm-acme[jax,tf]==0.2.4
 s2clientprotocol
 pysc2>=4.0.0
 ml-collections
 tensorflow-datasets
 pandas
-jax>=0.2.26
-jaxlib
+jax==0.3.2
+jaxlib==0.3.2
 dm-pix
+dm-haiku==0.0.8
+optax==0.1.3
+chex==0.1.5
